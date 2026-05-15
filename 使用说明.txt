@@ -1,0 +1,40 @@
+智能文档平台（RAG + ReAct Agent）
+================================
+
+位置: 本项目位于 `D:\学习项目\个人能力证明\smart_doc_platform`。
+
+环境准备
+--------
+1. 安装 Python 3.10+。
+2. 在项目根目录执行:
+
+   pip install -r requirements.txt
+
+3. 复制 `.env.example` 为 `.env`，填写 `OPENAI_API_KEY`（用于 Agent 推理与生成答案）。
+   嵌入向量默认使用本地 `sentence-transformers/all-MiniLM-L6-v2`，无需单独申请嵌入 API。
+
+使用步骤
+--------
+1. 将需要检索的 PDF 放入 `data/pdfs/`。
+2. 建立 / 更新向量库:
+
+   python ingest.py
+
+   若需覆盖同名文件旧索引:
+
+   python ingest.py --replace
+
+3. 启动对话:
+
+   python main.py
+
+可调参数（减少幻觉、控制粒度）
+------------------------------
+编辑 `src/config.py` 中的 `CHUNK_SIZE`、`CHUNK_OVERLAP`、`RETRIEVER_K` 等。
+
+技术说明
+--------
+- PDF: PyPDFLoader
+- 分块: RecursiveCharacterTextSplitter
+- 向量库: Chroma 持久化目录 `data/chroma`
+- Agent: LangGraph `create_react_agent`，工具为「文档问答」「文档对比」
