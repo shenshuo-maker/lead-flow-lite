@@ -1,6 +1,14 @@
 # LeadFlow Lite
 
-面向 **餐饮、美业、健身、教培等本地服务业** 门店的轻量 **AI 获客演示系统**：从「求推荐/问价」类意向中筛客资、递进式私域私信、极简后台与套餐说明页，适合现场演示与交付。
+<p>
+  <img src="https://img.shields.io/badge/Demo-获客闭环-3D5A66?style=for-the-badge" alt="demo">
+  <img src="https://img.shields.io/badge/降级-无_API_Key_可演示-1F3B4D?style=for-the-badge" alt="fallback">
+  <img src="https://img.shields.io/badge/React_+_Flask-B4532A?style=for-the-badge" alt="stack">
+</p>
+
+> 应用向演示项目。投 AI Infra 时请以 [sandbench](https://github.com/shenshuo-maker/sandbench) 为准。
+
+面向 **餐饮、美业、健身、教培等本地服务业** 门店的轻量 **AI 获客演示系统**：从「求推荐/问价」类意向中筛客资、递进式私域私信、极简后台与套餐说明页，适合现场演示与交付。无 API Key 时自动降级，演示不中断。
 
 ## 技术栈
 
